@@ -1,0 +1,91 @@
+{
+  "name": "react-shopping-cart",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@playwright/test": "^1.50.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.25",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "axios": "^1.8.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^3.0.1",
+    "react-shopping-cart": "file:",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "npx cucumber-js",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage --watchAll",
+    "deploy": "firebase deploy",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "format": "prettier --write \"**/*.+(ts|tsx|js|json|css)\""
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 64,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@cucumber/cucumber": "^11.2.0",
+    "@serenity-js/core": "^3.31.9",
+    "@serenity-js/cucumber": "^3.31.9",
+    "@serenity-js/playwright": "^3.31.9",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/styled-components": "^5.1.23",
+    "lint-staged": "^10.2.10",
+    "playwright": "^1.50.1",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
